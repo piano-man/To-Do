@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8">
+
+    <title>TO-DO APP</title>
+
+    <link rel="stylesheet" href="/css/style.css"/>
+
+</head>
+<body>
+
+    <h1>To-DO</h1>
+    <dl></dl>
+    <p>No tasks</p>
+
+    <form>
+        <input type="text" id="task" name="task" placeholder="new task..." required />
+        <input type="Text" name="details" id="details" placeholder="describe the task..." required />
+        <button>Add Task</button>
+    </form>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/dictionary.js"></script>
+
+</body>
+</html>
