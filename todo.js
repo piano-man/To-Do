@@ -4,16 +4,16 @@ var bodyParser = require('body-parser')
 var app = express()
 var tasks = [
 {
-	term: "eat"
+	term: "eat",
 	defined: "most important task of the day"
 
 },
 {
-	term: "sleep"
+	term: "sleep",
 	defined: "very important task"
 },
 {
-	term: "play"
+	term: "play",
 	defined: "very very important task"
 }
 ];
@@ -23,7 +23,7 @@ app.use(function(req,res,next){
 	console.log(`${req.method} request for ${req.url}`)
 	next()
 })
-app.use(express.static('/home/gaganjeet/Project1/public'))
+app.use(express.static('/home/gaganjeet/To-Do/public'))
 app.get('/task-api',function(req,res){
 	res.json(tasks)
 })
@@ -32,9 +32,10 @@ app.post('/task-api',function(req,res){
 	res.json(tasks)
 })
 app.delete('/task-api/:term',function(req,res){
-	tasks = tasks.filiter(function(definition){
+	tasks = tasks.filter(function(definition){
 		return definition.term.toLowerCase()!= req.params.term.toLowerCase()
 			})
+	res.json(tasks)
 })
 app.use(cors())
 app.listen(3003)
